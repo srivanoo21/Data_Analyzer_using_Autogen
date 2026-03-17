@@ -30,29 +30,32 @@ This project implements a modular, agent-based system for automated data analysi
 7. The process uses **iris.csv** as the data source.
 8. The flow ends when the STOP condition is met and the task is complete.
 
-## Project Flowchart
+## Project Flow (ASCII Diagram)
 
-> **Note:** GitHub's Mermaid rendering does not support subgraphs or some advanced syntax. Here is a simplified flowchart:
-
-```mermaid
-flowchart TD
-    A[User Input/Task] --> B[main.py]
-    B --> C[models/openai_model_client.py]
-    B --> D[config/docker_util.py]
-    B --> E[teams/analyzer_gpt.py]
-    E --> F[agents/Data_analyzer_agent.py]
-    E --> G[agents/Code_executor_agent.py]
-    F --> H[Analyze Data & Generate Code]
-    G --> I[Execute Code in Docker]
-    I --> J[Output/Error Handling]
-    J --> F
-    J --> K[Final Analysis & Explanation]
-    K --> L[STOP Condition]
-    L --> M[Task Complete]
-    B --> N[iris.csv (Data)]
-    F --> N
-    H --> N
-    K --> N
+```
+User Input/Task
+      |
+   main.py
+      |
+  +-----------------------------+
+  |                             |
+models/openai_model_client.py    |
+config/docker_util.py            |
+teams/analyzer_gpt.py            |
+      |                         |
+  +-----------------------------+
+      |
+  agents/Data_analyzer_agent.py
+      |
+  agents/Code_executor_agent.py
+      |
+  Docker Execution
+      |
+  Output/Error Handling
+      |
+  Data_analyzer_agent.py (Final Analysis)
+      |
+  Task Complete (STOP)
 ```
 
 ---
