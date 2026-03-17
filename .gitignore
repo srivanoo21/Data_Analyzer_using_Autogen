@@ -1,0 +1,42 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Jupyter Notebooks
+*.ipynb_checkpoints
+
+# Environment
+.env
+venv/
+ags/
+autogen-venv/
+
+# Streamlit
+.temp/
+temp/
+*.png
+*.csv
+output_of_run/
+
+# VS Code
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Misc
+*.swp
+*.bak
+*.tmp
+
+# Ignore data files
+iris.csv
+
+# Ignore output images
+output.png
