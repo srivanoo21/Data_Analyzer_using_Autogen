@@ -12,7 +12,7 @@ This project implements a modular, agent-based system for automated data analysi
 - **config/docker_util.py**: Manages Docker container lifecycle, providing functions to start/stop containers and create the Docker executor.
 - **teams/analyzer_gpt.py**: Builds the agent team, combining Data Analyzer and Code Executor agents in a collaborative group chat with a termination condition.
 - **iris.csv**: Example data file used for analysis tasks.
-- **streamlit_app.py**: Likely for a web interface (not detailed here).
+- **streamlit_app.py**: Web interface for interactive data analysis (optional).
 
 ## Workflow Overview
 
@@ -32,8 +32,10 @@ This project implements a modular, agent-based system for automated data analysi
 
 ## Project Flowchart
 
+> **Note:** GitHub's Mermaid rendering does not support subgraphs or some advanced syntax. Here is a simplified flowchart:
+
 ```mermaid
-graph TD
+flowchart TD
     A[User Input/Task] --> B[main.py]
     B --> C[models/openai_model_client.py]
     B --> D[config/docker_util.py]
@@ -51,18 +53,6 @@ graph TD
     F --> N
     H --> N
     K --> N
-    subgraph Folder Structure
-        C
-        D
-        E
-        F
-        G
-        N
-    end
-    subgraph Team Collaboration
-        F
-        G
-    end
 ```
 
 ---
